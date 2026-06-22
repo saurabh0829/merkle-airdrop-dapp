@@ -1,103 +1,117 @@
-import Image from "next/image";
+"use client";
+
+import Link from "next/link";
+import { ArrowRight, Wallet, Search, Gift } from "lucide-react";
+import { AirdropStats } from "@/components/AirdropStats";
+import { AIRDROP_ADDRESS } from "@/lib/contracts";
+
+const STEPS = [
+  {
+    icon: <Wallet size={24} />,
+    title: "Connect",
+    desc: "Connect your wallet using MetaMask, Coinbase Wallet, or WalletConnect.",
+  },
+  {
+    icon: <Search size={24} />,
+    title: "Check Eligibility",
+    desc: "Your address is checked against a Merkle tree — a cryptographic allowlist stored on-chain.",
+  },
+  {
+    icon: <Gift size={24} />,
+    title: "Claim Tokens",
+    desc: "If eligible, claim your SRBT tokens in one click. Gas fees are minimal on Sepolia testnet.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="min-h-screen">
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* ── Hero ──────────────────────────────────────────── */}
+      <section className="relative overflow-hidden">
+        {/* Gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50
+                        via-purple-50 to-pink-50 dark:from-gray-950
+                        dark:via-purple-950/20 dark:to-gray-950 -z-10" />
+
+        <div className="max-w-3xl mx-auto px-6 py-24 text-center">
+          <div className="inline-block bg-blue-100 dark:bg-blue-900
+                          text-blue-700 dark:text-blue-300 text-xs
+                          font-semibold px-3 py-1 rounded-full mb-6">
+            Deployed on Sepolia Testnet
+          </div>
+
+          <h1 className="text-4xl sm:text-5xl font-extrabold
+                        tracking-tight mb-4">
+            Claim Your
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600
+                            bg-clip-text text-transparent">
+              {" "}SRBT Tokens
+            </span>
+          </h1>
+
+          <p className="text-gray-600 dark:text-gray-400 text-lg max-w-xl
+                      mx-auto mb-8">
+            A Merkle tree-based airdrop dApp built with Solidity, OpenZeppelin,
+            Hardhat, and Next.js. Same pattern used by Uniswap, Optimism,
+            and Arbitrum airdrops.
+          </p>
+
+          <Link
+            href="/claim"
+            className="inline-flex items-center gap-2 bg-blue-600
+                       text-white px-8 py-3.5 rounded-xl font-semibold
+                       text-lg hover:bg-blue-700 transition-colors
+                       shadow-lg shadow-blue-600/25"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            Check Eligibility
+            <ArrowRight size={20} />
+          </Link>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </section>
+
+      {/* ── How It Works ──────────────────────────────────── */}
+      <section className="max-w-3xl mx-auto px-6 py-16">
+        <h2 className="text-xl font-bold text-center mb-8">
+          How It Works
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          {STEPS.map((step, i) => (
+            <div key={i} className="text-center">
+              <div className="w-12 h-12 rounded-full bg-blue-100
+                              dark:bg-blue-900 flex items-center
+                              justify-center mx-auto mb-3 text-blue-600">
+                {step.icon}
+              </div>
+              <h3 className="font-semibold mb-1">
+                {i + 1}. {step.title}
+              </h3>
+              <p className="text-sm text-gray-500">{step.desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Live Stats ───────────────────────────────────── */}
+      <section className="max-w-3xl mx-auto px-6 pb-16">
+        <h2 className="text-xl font-bold text-center mb-6">
+          Live Stats
+        </h2>
+        <AirdropStats />
+      </section>
+
+      {/* ── Footer ──────────────────────────────────────── */}
+      <footer className="border-t text-center py-8 text-xs text-gray-400">
+        Built by{" "}
+        <a href="https://github.com/saurabh0829"
+          className="text-blue-500 hover:underline">Saurabh Sharma</a>
+        {" · "}
+        <a href="https://github.com/saurabh0829/merkle-airdrop-dapp"
+          className="text-blue-500 hover:underline">View Source</a>
+        {" · "}
+        <a href={`https://sepolia.etherscan.io/address/${AIRDROP_ADDRESS}`}
+          className="text-blue-500 hover:underline">Contract</a>
       </footer>
-    </div>
+    </main>
   );
 }
