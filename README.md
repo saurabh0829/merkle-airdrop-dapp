@@ -5,7 +5,7 @@
 > Built with Solidity, OpenZeppelin, Hardhat, Next.js, wagmi, and viem.
 
 ## 🌐 Live Demo
-[merkle-airdrop-dapp.vercel.app](https://merkle-airdrop-dapp.vercel.app)
+[merkle-airdrop-dapp.vercel.app](https://merkle-airdrop-dapp.vercel.app/)
 
 
 
