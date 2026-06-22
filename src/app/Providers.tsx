@@ -5,7 +5,6 @@ import { WagmiProvider }                              from "wagmi";
 import { QueryClient, QueryClientProvider }           from "@tanstack/react-query";
 import { ThemeProvider, useTheme }                    from "next-themes";
 import { config }                                     from "@/config/wagmi";
-// @ts-expect-error: CSS module side-effect import without type declarations
 import "@rainbow-me/rainbowkit/styles.css";
 
 const queryClient = new QueryClient();

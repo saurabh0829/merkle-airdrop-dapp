@@ -1,6 +1,11 @@
 "use client";
-import { ClaimCard } from "@/components/ClaimCard";
+import dynamic from "next/dynamic";
 import { parseEther } from "viem";
+
+const ClaimCard = dynamic(
+  () => import("@/components/ClaimCard").then((m) => m.ClaimCard),
+  { ssr: false }
+);
 
 const AllowList = [
     { address: "0x2AA4553AaDC06Ec3144e23a3Ac99213d7dE63827", amount: parseEther("1000") },

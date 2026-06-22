@@ -1,6 +1,5 @@
 import {Providers} from "./Providers"
 import { Navbar } from "@/components/Navbar"
-// @ts-expect-error
 import "./globals.css"
 
 export default function RootLayout({

@@ -1,9 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { ArrowRight, Wallet, Search, Gift } from "lucide-react";
-import { AirdropStats } from "@/components/AirdropStats";
 import { AIRDROP_ADDRESS } from "@/lib/contracts";
+
+const AirdropStats = dynamic(
+  () => import("@/components/AirdropStats").then((m) => m.AirdropStats),
+  { ssr: false }
+);
 
 const STEPS = [
   {

@@ -1,5 +1,10 @@
 "use client";
-import { AdminPanel } from "@/components/AdminPanel";
+import dynamic from "next/dynamic";
+
+const AdminPanel = dynamic(
+  () => import("@/components/AdminPanel").then((m) => m.AdminPanel),
+  { ssr: false }
+);
 
 export default function AdminPage(){
     return(

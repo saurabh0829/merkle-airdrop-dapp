@@ -1,5 +1,10 @@
 "use client";
-import { AirdropStats } from "@/components/AirdropStats";
+import dynamic from "next/dynamic";
+
+const AirdropStats = dynamic(
+  () => import("@/components/AirdropStats").then((m) => m.AirdropStats),
+  { ssr: false }
+);
 
 export default function DashboardPage() {
   return (
