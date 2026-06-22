@@ -10,8 +10,9 @@
 
 
 ## 📸 Screenshots
-[Add screenshot of landing page here]
-[Add screenshot of claim page here]
+<img width="1470" height="956" alt="Screenshot 2026-06-22 at 11 10 35" src="https://github.com/user-attachments/assets/5fe1cb9c-e4bf-49a5-893f-fd47a426c9e6" />
+
+
 
 ## ✨ Features
 - **Merkle tree airdrop** — gas-efficient allowlist verification
