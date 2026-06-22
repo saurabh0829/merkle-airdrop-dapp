@@ -10,6 +10,9 @@
 
 
 ## 📸 Screenshots
+<img width="1469" height="807" alt="Screenshot 2026-06-22 at 11 54 06" src="https://github.com/user-attachments/assets/d4f5f72c-ca6b-406d-a875-52c77929e2b6" />
+
+
 <img width="1470" height="956" alt="Screenshot 2026-06-22 at 11 10 35" src="https://github.com/user-attachments/assets/5fe1cb9c-e4bf-49a5-893f-fd47a426c9e6" />
 
 
