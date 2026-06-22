@@ -1,5 +1,5 @@
 import {getDefaultConfig} from "@rainbow-me/rainbowkit"
-import { mainnet, sepolia, base } from "wagmi/chains";
+import { mainnet, sepolia} from "wagmi/chains";
 import { http } from "wagmi";
 
 const alchemyKey = process.env.NEXT_PUBLIC_ALCHEMY_API_KEY;

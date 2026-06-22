@@ -1,5 +1,5 @@
 "use client";
-import { useState, useMemo, useEffect } from "react";
+import { useMemo, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { formatEther } from "viem";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
@@ -36,7 +36,7 @@ export function ClaimCard({ allowlist }: Props) {
     // hide TxStatus before the user sees the Etherscan link
     useEffect(() => {
         if (isSuccess) refetchClaimed();
-    }, [isSuccess]);
+    }, [isSuccess, refetchClaimed]);
 
     // STATE:1 Not Connected
     if (!isConnected) return (

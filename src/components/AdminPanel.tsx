@@ -1,7 +1,7 @@
 "use client";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { formatEther } from "viem";
-import { Upload, CheckCircle, Loader2, AlertCircle }
+import { Upload, CheckCircle, Loader2 }
     from "lucide-react";
 import { parseAllowlistCSV } from "../lib/allowList";
 import { buildTree, getRoot, type AllowlistEntry }
